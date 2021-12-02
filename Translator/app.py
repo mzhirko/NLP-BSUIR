@@ -29,10 +29,36 @@ if st.button('Translate to English'):
     if text == '':
         st.write('Please enter Russian text for translation') 
     else: 
+        # or create folder, named "model", install pre-trained files there and write path to 'em
         model_name = "facebook/mbart-large-50-many-to-many-mmt"
         tokenizer.src_lang = "ru_RU"
         encoded_russian_text = tokenizer(text, return_tensors="pt")
         generated_tokens = model.generate(**encoded_russian_text, forced_bos_token_id=tokenizer.lang_code_to_id["en_XX"])
+        out = tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
+        translation = ' '.join(out)
+        st.write(translation)
+        
+
+        tokens = nltk.word_tokenize(translation)
+        cleaned_tokens= [token for token in tokens if token.isalnum()]
+        tagged_sentence = nltk.pos_tag(cleaned_tokens)
+        output = ''
+        for tag in tagged_sentence:
+            out = tag[0] + ' ---> ' + tag[1] + '<br>'
+            output += out
+        st.markdown(output, unsafe_allow_html=True)
+        
+else: pass
+
+
+if st.button('Translate to Russian'):
+    if text == '':
+        st.write('Please enter English text for translation') 
+    else: 
+        model_name = "facebook/mbart-large-50-many-to-many-mmt"
+        tokenizer.src_lang = "en_XX"
+        encoded_english_text = tokenizer(text, return_tensors="pt")
+        generated_tokens = model.generate(**encoded_english_text, forced_bos_token_id=tokenizer.lang_code_to_id["ru_RU"])
         out = tokenizer.batch_decode(generated_tokens, skip_special_tokens=True)
         translation = ' '.join(out)
         st.write(translation)
