@@ -15,7 +15,17 @@ except:
 st.title("Text to speech")
 translator = Translator()
 
-text = st.text_input("Enter text")
+uploaded_file = st.file_uploader('Text to process',type=['txt'])
+if uploaded_file is not None:
+    if uploaded_file.name[-3:] == 'txt':
+        text = uploaded_file.read().decode('utf-8')
+else:
+    with open("sample.txt", "r") as f:
+        text = f.read()
+
+st.header("Enter text to analyze")
+text = st.text_area("", text)
+
 in_lang = st.selectbox(
     "Select your input language",
     ("English", "Russian", "German", "Chinese", "Japanese"),
