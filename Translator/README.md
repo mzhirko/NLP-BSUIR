@@ -5,11 +5,16 @@
 NMT using large BART model + POS tagging using NLTK.
 
 Download pre-treined model locally to accelerate processing.
+```bash
+git lfs install
+git clone https://huggingface.co/facebook/mbart-large-50-many-to-many-mmt
+```
 
 *Links to the useful info:*
 
 - [NLTK;](https://www.nltk.org/)
 - [mBART;](https://huggingface.co/facebook/mbart-large-50-many-to-many-mmt)
+- [also check for mBART;](https://huggingface.co/facebook/mbart-large-50)
 
 ## Run w/o Docker
 
