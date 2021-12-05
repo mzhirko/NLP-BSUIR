@@ -31,3 +31,7 @@ docker run -p 8501:8501 imstupidassbastard:latest
 ## Demo image
 
 ![NMT and POS demo](images/demo.png)
+
+## Report
+
+- [report link](https://docs.google.com/document/d/1eF1A9zUhS8MBVdTLceIxxdlhi6RwqjE1Bg2sIMTDxLI/edit#)
