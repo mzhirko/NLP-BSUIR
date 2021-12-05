@@ -26,4 +26,4 @@ docker run -p 8501:8501 imstupidassbastard:latest
 
 ## Report
 
-![report link](https://docs.google.com/document/d/1S1z2NzQoZZLiBOKyoPK2QZB97bt_FV8UBYhUKcLDRZ4/edit)
+- [report link](https://docs.google.com/document/d/1S1z2NzQoZZLiBOKyoPK2QZB97bt_FV8UBYhUKcLDRZ4/edit)
